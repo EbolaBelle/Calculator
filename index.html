@@ -4,8 +4,43 @@
         <meta charset="utf-8">
         <title>Calculator</title>
         <script src="scripts.js" defer></script>
+        <style>
+            .body{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .container {
+                padding: 50px;
+                display: flex;
+                background-color: green;
+                justify-content: center;
+                align-items: center;
+                margin: auto;
+            }
+            .calculator-box {
+                height: 500px;
+                width: 350px;
+                background-color: black;
+            }
+            .display {
+                background-color: white;
+                height: 10%;
+                margin: 6% 5%;
+            }
+        </style>
     </head>
     <body>
-
+        <div class="body">
+            <div class="container">
+                <div class="calculator-box">
+                    <div class="display"></div>
+                    <div class="input">
+                        <div class="numbers"></div>
+                        <div class="operations"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </body>
 </html>
