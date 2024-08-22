@@ -1,4 +1,12 @@
-function add(a, b) {
+//variable declaration
+
+let firstNumber;
+let secondNumber;
+let operator;
+
+
+//function declarations
+function add(a,b) {
     return a + b;
 }
 
@@ -12,4 +20,21 @@ function multiply(a,b) {
 
 function divide(a,b) {
     return a / b;
+}
+
+function operate(a,b,operator) {
+    switch (operator) {
+        case 'add':
+            return add(a,b);
+            break;
+        case 'subtract':
+            return subtract(a,b);
+            break;
+        case 'multiply':
+            return multiply(a,b);
+            break;
+        case 'divide':
+            return divide(a,b);
+            break;
+    }
 }
