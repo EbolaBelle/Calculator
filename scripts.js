@@ -3,6 +3,7 @@
 let firstNumber;
 let secondNumber;
 let operator;
+let displayValue;
 
 const output = document.querySelector(".output");
 const buttonOne = document.querySelector("#one");
@@ -15,37 +16,86 @@ const buttonSeven = document.querySelector('#seven');
 const buttonEight = document.querySelector('#eight');
 const buttonNine = document.querySelector('#nine');
 const buttonZero = document.querySelector('#zero');
+const clear = document.querySelector('#clear');
+const addBtn = document.querySelector('#add');
+const subtractBtn = document.querySelector('#subtract');
+const multiplyBtn = document.querySelector('#multiply');
+const divideBtn = document.querySelector('#divide');
+const equal = document.querySelector('#equals');
+
+addBtn.addEventListener('click', () => {
+    firstNumber = +(output.textContent)
+    output.textContent = "";
+    operator = "add";
+})
+subtractBtn.addEventListener('click', () => {
+    firstNumber = +(output.textContent)
+    output.textContent = "";
+    operator = "subtract";
+})
+multiplyBtn.addEventListener('click', () => {
+    firstNumber = +(output.textContent)
+    output.textContent = "";
+    operator = "multiply";
+})
+divideBtn.addEventListener('click', () => {
+    firstNumber = +(output.textContent)
+    output.textContent = "";
+    operator = "divide";
+})
+
+clear.addEventListener('click', () => {
+    firstNumber = undefined;
+    secondNumber = undefined;
+    operator = undefined;
+    output.textContent = "";
+})
+equals.addEventListener('click', () => {
+    secondNumber = +(output.textContent);
+    output.textContent = operate(firstNumber, secondNumber, operator);
+    firstNumber = undefined;
+    secondNumber = undefined;
+})
 
 buttonOne.addEventListener('click', () => {
     output.textContent = output.textContent + "1";
-
+    displayValue = +(output.textContent);
 })
 buttonTwo.addEventListener('click', () => {
-    output.textContent =output.textContent + "2";
+    output.textContent = output.textContent + "2";
+    displayValue = +(output.textContent);
 })
 buttonThree.addEventListener('click', () => {
     output.textContent = output.textContent + "3";
+    displayValue = +(output.textContent);
 })
 buttonFour.addEventListener('click', () => {
     output.textContent = output.textContent + "4";
+    displayValue = +(output.textContent);
 })
 buttonFive.addEventListener('click', () => {
     output.textContent = output.textContent + "5";
+    displayValue = +(output.textContent);
 })
 buttonSix.addEventListener('click', () => {
     output.textContent = output.textContent + "6";
+    displayValue = +(output.textContent);
 })
 buttonSeven.addEventListener('click', () => {
     output.textContent = output.textContent + "7";
+    displayValue = +(output.textContent);
 })
 buttonEight.addEventListener('click', () => {
     output.textContent = output.textContent + "8";
+    displayValue = +(output.textContent);
 })
 buttonNine.addEventListener('click', () => {
     output.textContent = output.textContent + "9";
+    displayValue = +(output.textContent);
 })
 buttonZero.addEventListener('click', () => {
     output.textContent = output.textContent + "0";
+    displayValue = +(output.textContent);
 })
 
 //function declarations
