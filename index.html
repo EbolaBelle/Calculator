@@ -23,10 +23,17 @@
                 width: 350px;
                 background-color: black;
             }
-            .display {
-                background-color: white;
+            .display {          
+                display: flex;      
+                background-color: green;
                 height: 10%;
                 margin: 6% 5%;
+                justify-content: center;
+                align-items: center;
+            }
+            .output {
+                font-size: xx-large;                
+                color: goldenrod;
             }
         </style>
     </head>
@@ -34,11 +41,28 @@
         <div class="body">
             <div class="container">
                 <div class="calculator-box">
-                    <div class="display"></div>
-                    <div class="input">
-                        <div class="numbers"></div>
-                        <div class="operations"></div>
+                    <div class="display">
+                        <div class="output">5 + 4 = 9</div>
                     </div>
+                    <div class="input">
+                        <div class="numbers">
+                            <button id="one">1</button>
+                            <button id="two">2</button>
+                            <button id="three">3</button>
+                            <button id="four">4</button>
+                            <button id="five">5</button>
+                            <button id="6">6</button>
+                            <button id="7">7</button>
+                            <button id="8">8</button>
+                            <button id="9">9</button>
+                            <button id="0">0</button>
+                        </div>
+                        <div class="operations">
+                            <button id="add">+</button>
+                            <button id="subtract">-</button>
+                            <button id="multiply">x</button>
+                            <button id="divide">/</button>
+                        </div>                    
                 </div>
             </div>
         </div>
