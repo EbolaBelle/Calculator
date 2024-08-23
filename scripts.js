@@ -1,4 +1,4 @@
-//variable declaration
+//Global variables
 
 let firstNumber;
 let secondNumber;
@@ -25,6 +25,7 @@ const multiplyBtn = document.querySelector('#multiply');
 const divideBtn = document.querySelector('#divide');
 const equal = document.querySelector('#equals');
 const invert = document.querySelector('#invert');
+const decimal = document.querySelector('#decimal');
 
 //Operator buttons
 
@@ -49,8 +50,7 @@ divideBtn.addEventListener('click', () => {
 
 invert.addEventListener('click', () => {
     output.textContent = output.textContent * -1;
-} )
-
+})
 clear.addEventListener('click', () => {
     cleanSlate()
     output.textContent = "";
@@ -59,7 +59,16 @@ equals.addEventListener('click', () => {
     secondNumber = +(output.textContent);
     output.textContent = operate(firstNumber, secondNumber, operator);
     cleanSlate();
+    displayValue = output.textContent;
 })
+decimal.addEventListener('click', function() {
+    if (displayValue % 1 !== 0) {
+        return;
+    } else {
+    output.textContent = output.textContent + this.textContent;
+    }
+}
+)
 
 //Number buttons
 
@@ -97,7 +106,7 @@ function divide(a,b) {
 }
 
 function operate(a,b,operator) {
-    if (a !== a || b !== b) {
+    if (a !== a || b !== b) { //check if a or b is NaN
         return "Error";
     } else {
         switch (operator) {
