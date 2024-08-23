@@ -66,6 +66,7 @@ equals.addEventListener('click', () => {
     output.textContent = operate(firstNumber, secondNumber, operator);
     firstNumber = 0;
     secondNumber = 0;
+    operator = undefined;
 })
 
 //Number buttons
@@ -126,22 +127,30 @@ function multiply(a,b) {
 }
 
 function divide(a,b) {
+    if (b === 0) {
+        return ";)"
+    } else {
     return a / b;
+    }
 }
 
 function operate(a,b,operator) {
-    switch (operator) {
-        case 'add':
-            return add(a,b);
-            break;
-        case 'subtract':
-            return subtract(a,b);
-            break;
-        case 'multiply':
-            return multiply(a,b);
-            break;
-        case 'divide':
-            return divide(a,b);
-            break;
+    if (a !== a || b !== b) {
+        return "Error";
+    } else {
+        switch (operator) {
+            case 'add':
+                return add(a,b);
+                break;
+            case 'subtract':
+                return subtract(a,b);
+                break;
+            case 'multiply':
+                return multiply(a,b);
+                break;
+            case 'divide':
+                return divide(a,b);
+                break;
+        }
     }
 }
