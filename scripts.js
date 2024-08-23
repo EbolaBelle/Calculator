@@ -5,6 +5,8 @@ let secondNumber;
 let operator;
 let displayValue;
 
+//DOM variables
+
 const output = document.querySelector(".output");
 const buttonOne = document.querySelector("#one");
 const buttonTwo = document.querySelector('#two');
@@ -22,6 +24,8 @@ const subtractBtn = document.querySelector('#subtract');
 const multiplyBtn = document.querySelector('#multiply');
 const divideBtn = document.querySelector('#divide');
 const equal = document.querySelector('#equals');
+
+//Operator buttons
 
 addBtn.addEventListener('click', () => {
     firstNumber = +(output.textContent)
@@ -44,6 +48,8 @@ divideBtn.addEventListener('click', () => {
     operator = "divide";
 })
 
+//Special function buttons
+
 clear.addEventListener('click', () => {
     firstNumber = undefined;
     secondNumber = undefined;
@@ -53,9 +59,11 @@ clear.addEventListener('click', () => {
 equals.addEventListener('click', () => {
     secondNumber = +(output.textContent);
     output.textContent = operate(firstNumber, secondNumber, operator);
-    firstNumber = undefined;
-    secondNumber = undefined;
+    firstNumber = 0;
+    secondNumber = 0;
 })
+
+//Number buttons
 
 buttonOne.addEventListener('click', () => {
     output.textContent = output.textContent + "1";
