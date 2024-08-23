@@ -29,23 +29,19 @@ const invert = document.querySelector('#invert');
 //Operator buttons
 
 addBtn.addEventListener('click', () => {
-    firstNumber = +(output.textContent)
-    output.textContent = "";
+    handleOperator();
     operator = "add";
 })
 subtractBtn.addEventListener('click', () => {
-    firstNumber = +(output.textContent)
-    output.textContent = "";
+    handleOperator();
     operator = "subtract";
 })
 multiplyBtn.addEventListener('click', () => {
-    firstNumber = +(output.textContent)
-    output.textContent = "";
+    handleOperator();
     operator = "multiply";
 })
 divideBtn.addEventListener('click', () => {
-    firstNumber = +(output.textContent)
-    output.textContent = "";
+    handleOperator();
     operator = "divide";
 })
 
@@ -56,61 +52,27 @@ invert.addEventListener('click', () => {
 } )
 
 clear.addEventListener('click', () => {
-    firstNumber = undefined;
-    secondNumber = undefined;
-    operator = undefined;
+    cleanSlate()
     output.textContent = "";
 })
 equals.addEventListener('click', () => {
     secondNumber = +(output.textContent);
     output.textContent = operate(firstNumber, secondNumber, operator);
-    firstNumber = 0;
-    secondNumber = 0;
-    operator = undefined;
+    cleanSlate();
 })
 
 //Number buttons
 
-buttonOne.addEventListener('click', () => {
-    output.textContent = output.textContent + "1";
-    displayValue = +(output.textContent);
-})
-buttonTwo.addEventListener('click', () => {
-    output.textContent = output.textContent + "2";
-    displayValue = +(output.textContent);
-})
-buttonThree.addEventListener('click', () => {
-    output.textContent = output.textContent + "3";
-    displayValue = +(output.textContent);
-})
-buttonFour.addEventListener('click', () => {
-    output.textContent = output.textContent + "4";
-    displayValue = +(output.textContent);
-})
-buttonFive.addEventListener('click', () => {
-    output.textContent = output.textContent + "5";
-    displayValue = +(output.textContent);
-})
-buttonSix.addEventListener('click', () => {
-    output.textContent = output.textContent + "6";
-    displayValue = +(output.textContent);
-})
-buttonSeven.addEventListener('click', () => {
-    output.textContent = output.textContent + "7";
-    displayValue = +(output.textContent);
-})
-buttonEight.addEventListener('click', () => {
-    output.textContent = output.textContent + "8";
-    displayValue = +(output.textContent);
-})
-buttonNine.addEventListener('click', () => {
-    output.textContent = output.textContent + "9";
-    displayValue = +(output.textContent);
-})
-buttonZero.addEventListener('click', () => {
-    output.textContent = output.textContent + "0";
-    displayValue = +(output.textContent);
-})
+buttonOne.addEventListener('click', handleNumber)
+buttonTwo.addEventListener('click', handleNumber)
+buttonThree.addEventListener('click', handleNumber)
+buttonFour.addEventListener('click', handleNumber)
+buttonFive.addEventListener('click', handleNumber)
+buttonSix.addEventListener('click', handleNumber)
+buttonSeven.addEventListener('click',handleNumber)
+buttonEight.addEventListener('click',handleNumber)
+buttonNine.addEventListener('click', handleNumber)
+buttonZero.addEventListener('click', handleNumber)
 
 //function declarations
 
@@ -153,4 +115,20 @@ function operate(a,b,operator) {
                 break;
         }
     }
+}
+
+function cleanSlate() {
+    firstNumber = undefined;
+    secondNumber = undefined;
+    operator = undefined;
+}
+
+function handleNumber() {
+    output.textContent = output.textContent + this.textContent;
+    displayValue = +(output.textContent);
+}
+
+function handleOperator() {
+    firstNumber = +(output.textContent)
+    output.textContent = "";
 }
