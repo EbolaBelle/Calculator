@@ -18,7 +18,6 @@ const buttonSeven = document.querySelector('#seven');
 const buttonEight = document.querySelector('#eight');
 const buttonNine = document.querySelector('#nine');
 const buttonZero = document.querySelector('#zero');
-const clear = document.querySelector('#clear');
 const addBtn = document.querySelector('#add');
 const subtractBtn = document.querySelector('#subtract');
 const multiplyBtn = document.querySelector('#multiply');
@@ -26,6 +25,7 @@ const divideBtn = document.querySelector('#divide');
 const equal = document.querySelector('#equals');
 const invert = document.querySelector('#invert');
 const decimal = document.querySelector('#decimal');
+const clear = document.querySelector('#clear');
 
 //Operator buttons
 
@@ -65,10 +65,9 @@ decimal.addEventListener('click', function() {
     if (displayValue % 1 !== 0) {
         return;
     } else {
-    output.textContent = output.textContent + this.textContent;
+        output.textContent = output.textContent + this.textContent;
     }
-}
-)
+})
 
 //Number buttons
 
@@ -88,15 +87,12 @@ buttonZero.addEventListener('click', handleNumber)
 function add(a,b) {
     return a + b;
 }
-
 function subtract(a,b) {
     return a - b;
 }
-
 function multiply(a,b) {
    return a * b;
 }
-
 function divide(a,b) {
     if (b === 0) {
         return ";)"
@@ -104,7 +100,6 @@ function divide(a,b) {
     return a / b;
     }
 }
-
 function operate(a,b,operator) {
     if (a !== a || b !== b) { //check if a or b is NaN
         return "Error";
@@ -125,18 +120,15 @@ function operate(a,b,operator) {
         }
     }
 }
-
 function cleanSlate() {
     firstNumber = undefined;
     secondNumber = undefined;
     operator = undefined;
 }
-
 function handleNumber() {
     output.textContent = output.textContent + this.textContent;
     displayValue = +(output.textContent);
 }
-
 function handleOperator() {
     firstNumber = +(output.textContent)
     output.textContent = "";
