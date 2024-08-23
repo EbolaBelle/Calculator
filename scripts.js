@@ -24,6 +24,7 @@ const subtractBtn = document.querySelector('#subtract');
 const multiplyBtn = document.querySelector('#multiply');
 const divideBtn = document.querySelector('#divide');
 const equal = document.querySelector('#equals');
+const invert = document.querySelector('#invert');
 
 //Operator buttons
 
@@ -49,6 +50,10 @@ divideBtn.addEventListener('click', () => {
 })
 
 //Special function buttons
+
+invert.addEventListener('click', () => {
+    output.textContent = output.textContent * -1;
+} )
 
 clear.addEventListener('click', () => {
     firstNumber = undefined;
