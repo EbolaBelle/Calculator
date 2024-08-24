@@ -29,7 +29,16 @@ subtractBtn.addEventListener('click', () => {
     handleOperator()
     operator = 'subtract';
     handleOperator();
-
+})
+multiplyBtn.addEventListener('click', () => {
+    handleOperator()
+    operator = 'multiply';
+    handleOperator();
+})
+divideBtn.addEventListener('click', () => {
+    handleOperator()
+    operator = 'divide';
+    handleOperator();
 })
 //Number buttons
 
