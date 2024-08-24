@@ -58,6 +58,14 @@ clear.addEventListener('click', () => {
     cleanSlate()
     output.textContent = "";
 })
+decimal.addEventListener('click', function() {
+    if (output.textContent % 1 !== 0 || typeof displayValue === "string") { //check if decimal already present
+        return;
+    } else {
+        output.textContent = output.textContent + this.textContent;
+        displayValue = output.textContent;
+    }
+})
 
 //function declarations
 
@@ -88,8 +96,9 @@ function handleNumber() {
     if (displayValue === true) {
         output.textContent = "";
         displayValue = false;
+    } if (output.textContent.length <= 23) {
+        output.textContent += +(this.textContent);
     }
-    output.textContent += +(this.textContent);
 }
 
 function cleanSlate() {
