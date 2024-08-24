@@ -4,7 +4,6 @@ let firstNumber;
 let secondNumber;
 let operator;
 let displayValue;
-
 //DOM variables
 
 const numberBtns = document.querySelectorAll(".numbers > .numbtns");
@@ -46,6 +45,8 @@ numberBtns.forEach((btn) => {
     btn.addEventListener('click', handleNumber);
 })
 
+
+
 //function declarations
 
 function handleOperator() {
@@ -56,7 +57,10 @@ function handleOperator() {
             firstNumber = +(output.textContent);
             output.textContent = "";
     } else {
-        secondNumber = +(output.textContent);        
+        secondNumber = +(output.textContent);
+        if(secondNumber === 0 && (operator === "multiply" || operator === "divide")) {
+            secondNumber = 1;
+        }       
         output.textContent = operate(firstNumber,secondNumber,operator);
         firstNumber = +(output.textContent);
         secondNumber = undefined;
