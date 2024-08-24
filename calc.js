@@ -45,9 +45,21 @@ numberBtns.forEach((btn) => {
     btn.addEventListener('click', handleNumber);
 })
 
+//Special function buttons
 
+equal.addEventListener('click', () => {
+    secondNumber = +(output.textContent);
+    doTheMath();
+})
 
 //function declarations
+
+function doTheMath() {
+    output.textContent = operate(firstNumber,secondNumber,operator);
+    firstNumber = +(output.textContent);
+    secondNumber = undefined;
+    displayValue = true;
+}
 
 function handleOperator() {
     if (displayValue === true) {
@@ -61,11 +73,7 @@ function handleOperator() {
         if(secondNumber === 0 && (operator === "multiply" || operator === "divide")) {
             secondNumber = 1;
         }       
-        output.textContent = operate(firstNumber,secondNumber,operator);
-        firstNumber = +(output.textContent);
-        secondNumber = undefined;
-        displayValue = true;
-        //operator = undefined;
+        doTheMath();
     }
 }
 
