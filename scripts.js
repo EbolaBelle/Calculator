@@ -8,7 +8,6 @@ const OPERATORS = ['+','-','x','/']
 
 //DOM variables
 
-
 const numberBtns = document.querySelectorAll(".numbers > .numbtns");
 const output = document.querySelector(".output");
 const addBtn = document.querySelector('#add');
@@ -124,12 +123,4 @@ function handleNumber() {
 function handleOperator(btn) {
     firstNumber = +(output.textContent);
     output.textContent = btn.textContent;
-}
-function fixDecimal(num) {
-    return num.toFixed(21);
-}
-function isDecimal(){
-    if (displayValue % 1 !== 0) { //check if decimal already present
-        return;
-    }
 }
