@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Calculator</title>
+        <script src="calc.js" defer></script>
+        <style>
+            body {
+                background-color: goldenrod;
+            }
+            .calculator-box {
+                position: absolute;
+                top:  50%;
+                left: 50%;
+                transform: translate(-50%,-50%);
+                height: 500px;
+                width: 437px;
+                background-color: black;
+                padding: 0px 10px;
+            }
+            .display {          
+                display: flex;      
+                background-color: green;
+                height: 12%;
+                margin: 6% 5%;
+                justify-content: center;
+                align-items: center;
+            }
+            .output {
+                font-size: xx-large;                
+                color: goldenrod;
+            }
+            button {
+                font-size: x-large;
+                margin: 5px;
+                height: 75px;
+                width: 75px;
+            }
+            .input {
+                display: flex;
+                justify-content: space-evenly;
+            }
+        </style>
+    </head>
+    <body>                  
+        <div class="calculator-box">
+            <div class="display">
+                <div class="output"></div>
+            </div>
+            <div class="input">
+                <div class="numbers">
+                    <button class="numbtns">1</button>
+                    <button class="numbtns">2</button>
+                    <button class="numbtns">3</button>
+                    <button class="numbtns">4</button>
+                    <button class="numbtns">5</button>
+                    <button class="numbtns">6</button>
+                    <button class="numbtns">7</button>
+                    <button class="numbtns">8</button>
+                    <button class="numbtns">9</button>                            
+                    <button id="invert">+/-</button>
+                    <button class="numbtns">0</button>
+                    <button id="decimal">.</button>
+                </div>
+                 <div class="operations">
+                    <button id="add">+</button>
+                    <button id="subtract">-</button>
+                    <button id="multiply">x</button>
+                    <button id="divide">/</button>                            
+                </div>
+                <div class="special">
+                    <button id="equals">=</button>
+                    <button id="clear">Clear</button>                        
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
