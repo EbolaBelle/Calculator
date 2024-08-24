@@ -51,6 +51,9 @@ equal.addEventListener('click', () => {
     secondNumber = +(output.textContent);
     doTheMath();
 })
+invert.addEventListener('click', () => {
+    output.textContent = output.textContent * -1;
+})
 
 //function declarations
 
