@@ -4,21 +4,13 @@ let firstNumber;
 let secondNumber;
 let operator;
 let displayValue;
-const OPERANDS = ['+','-','x','/']
+const OPERATORS = ['+','-','x','/']
 
 //DOM variables
 
+const numbers = document.querySelector('.numbers');
+const numberBtns = numbers.querySelectorAll(".numbers > button");
 const output = document.querySelector(".output");
-const buttonOne = document.querySelector("#one");
-const buttonTwo = document.querySelector('#two');
-const buttonThree = document.querySelector('#three');
-const buttonFour = document.querySelector('#four');
-const buttonFive = document.querySelector('#five');
-const buttonSix = document.querySelector('#six');
-const buttonSeven = document.querySelector('#seven');
-const buttonEight = document.querySelector('#eight');
-const buttonNine = document.querySelector('#nine');
-const buttonZero = document.querySelector('#zero');
 const addBtn = document.querySelector('#add');
 const subtractBtn = document.querySelector('#subtract');
 const multiplyBtn = document.querySelector('#multiply');
@@ -72,16 +64,9 @@ decimal.addEventListener('click', function() {
 
 //Number buttons
 
-buttonOne.addEventListener('click', handleNumber)
-buttonTwo.addEventListener('click', handleNumber)
-buttonThree.addEventListener('click', handleNumber)
-buttonFour.addEventListener('click', handleNumber)
-buttonFive.addEventListener('click', handleNumber)
-buttonSix.addEventListener('click', handleNumber)
-buttonSeven.addEventListener('click',handleNumber)
-buttonEight.addEventListener('click',handleNumber)
-buttonNine.addEventListener('click', handleNumber)
-buttonZero.addEventListener('click', handleNumber)
+numberBtns.forEach((btn) => {
+    btn.addEventListener('click', handleNumber);
+})
 
 //function declarations
 
@@ -127,7 +112,7 @@ function cleanSlate() {
     operator = undefined;
 }
 function handleNumber() {
-    if (OPERANDS.some(sign => output.textContent.includes(sign))) { //check if operator is displayed
+    if (OPERATORS.some(sign => output.textContent.includes(sign))) { //check if operator is displayed
         output.textContent = "";
     }
     if (output.textContent.length <= 21) {
