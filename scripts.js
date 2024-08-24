@@ -8,8 +8,8 @@ const OPERATORS = ['+','-','x','/']
 
 //DOM variables
 
-const numbers = document.querySelector('.numbers');
-const numberBtns = numbers.querySelectorAll(".numbers > button");
+
+const numberBtns = document.querySelectorAll(".numbers > .numbtns");
 const output = document.querySelector(".output");
 const addBtn = document.querySelector('#add');
 const subtractBtn = document.querySelector('#subtract');
@@ -55,10 +55,11 @@ equals.addEventListener('click', () => {
     displayValue = output.textContent;
 })
 decimal.addEventListener('click', function() {
-    if (displayValue % 1 !== 0) { //check if decimal already present
+    if (displayValue % 1 !== 0 || typeof displayValue === "string") { //check if decimal already present
         return;
     } else {
         output.textContent = output.textContent + this.textContent;
+        displayValue = output.textContent;
     }
 })
 
@@ -118,7 +119,7 @@ function handleNumber() {
     if (output.textContent.length <= 21) {
         output.textContent = output.textContent + this.textContent;
     }
-    displayValue = (output.textContent);
+    displayValue = +(output.textContent);
 }
 function handleOperator(btn) {
     firstNumber = +(output.textContent);
@@ -126,4 +127,9 @@ function handleOperator(btn) {
 }
 function fixDecimal(num) {
     return num.toFixed(21);
+}
+function isDecimal(){
+    if (displayValue % 1 !== 0) { //check if decimal already present
+        return;
+    }
 }
