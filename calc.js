@@ -54,6 +54,10 @@ equal.addEventListener('click', () => {
 invert.addEventListener('click', () => {
     output.textContent = output.textContent * -1;
 })
+clear.addEventListener('click', () => {
+    cleanSlate()
+    output.textContent = "";
+})
 
 //function declarations
 
@@ -86,6 +90,13 @@ function handleNumber() {
         displayValue = false;
     }
     output.textContent += +(this.textContent);
+}
+
+function cleanSlate() {
+    firstNumber = undefined;
+    secondNumber = undefined;
+    operator = undefined;
+    displayValue = undefined;
 }
 
 function add(a,b) {
